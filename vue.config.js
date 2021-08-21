@@ -30,11 +30,17 @@ module.exports = {
   lintOnSave: process.env.NODE_ENV === 'development',
   productionSourceMap: false,
   devServer: {
+    disableHostCheck: true,
     port: port,
     open: true,
     overlay: {
       warnings: false,
       errors: true
+    },
+    proxy: {
+      "/api": {
+        target: 'http://localhost:8080'
+      }
     },
     before: require('./mock/mock-server.js')
   },
