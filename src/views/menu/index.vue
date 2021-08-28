@@ -32,7 +32,7 @@
         </template>
       </el-table-column>
     </el-table>
-    <el-dialog :title="isUpdate ? 'Update Tanent' : 'Create Tanent'" :visible.sync="formVisible">
+    <el-dialog :title="isUpdate ? 'Update Menu' : 'Create Menu'" :visible.sync="formVisible">
       <el-form :model="form">
         <el-form-item label="Name">
           <el-input v-model="form.name" autocomplete="off" />
