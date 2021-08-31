@@ -94,6 +94,19 @@ export const constantRoutes = [
     ]
   },
 
+  {
+    path: '/organization',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'organization-index',
+        component: () => import('@/views/organization/index'),
+        meta: { title: 'Organization', icon: 'tree' }
+      }
+    ]
+  },
+
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]

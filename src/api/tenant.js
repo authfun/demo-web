@@ -7,6 +7,13 @@ export function getTenantList() {
   })
 }
 
+export function getTenantOptions() {
+  return request({
+    url: '/api/tenants/options',
+    method: 'get'
+  })
+}
+
 export function addTenant(form) {
   return request({
     url: '/api/tenants',
