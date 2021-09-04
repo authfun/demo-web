@@ -107,6 +107,33 @@ export const constantRoutes = [
     ]
   },
 
+  {
+    path: '/feature',
+    component: Layout,
+    name: 'feature',
+    meta: { title: 'Feature', icon: 'el-icon-s-data' },
+    children: [
+      {
+        path: 'list',
+        name: 'feature-list',
+        component: () => import('@/views/feature/list'),
+        meta: { title: 'List', icon: 'el-icon-tickets' }
+      },
+      {
+        path: 'add',
+        name: 'feature-add',
+        component: () => import('@/views/feature/add'),
+        meta: { title: 'Create', icon: 'el-icon-plus' }
+      },
+      {
+        path: 'detail/:id',
+        name: 'feature-detail',
+        component: () => import('@/views/feature/detail'),
+        hidden: true
+      }
+    ]
+  },
+
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]
